@@ -1,0 +1,373 @@
+@charset "UTF-8";
+html,
+body {
+  font-family: 微軟正黑體;
+  min-height: 100%;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h4 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+
+[v-cloak] {
+  display: none;
+}
+.filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  z-index: -1;
+}
+.filter .bgc_img {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  transition: 0.7s;
+  width: 100%;
+  height: 100%;
+  background-image: url(bg2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+@media (max-width: 768px) {
+  .filter .bgc_img {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+  }
+}
+
+.Time {
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .Time {
+    font-size: 12px;
+  }
+}
+.Time .Today,
+.Time .nowtime {
+  display: inline;
+}
+.Time .nowtime {
+  margin-left: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 20px 0;
+}
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+}
+.content .CountyRadio {
+  flex: 0 1 20%;
+}
+@media (max-width: 1024px) {
+  .content .CountyRadio {
+    flex: 0 1 30%;
+  }
+}
+.content ul {
+  flex: 1 1 80%;
+}
+@media (max-width: 1024px) {
+  .content ul {
+    flex: 0 1 70%;
+  }
+}
+
+.CountyRadio {
+  margin-right: 10px;
+}
+@media (max-width: 768px) {
+  .CountyRadio {
+    max-width: 90%;
+    min-width: 320px;
+    margin: 0 auto;
+  }
+}
+.CountyRadio .RadioBox {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .CountyRadio .RadioBox {
+    position: relative;
+    margin-bottom: 10px;
+  }
+}
+.CountyRadio .RadioBox:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.CountyRadio h3 {
+  margin: 0;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.CountyRadio h3 > p {
+  font-size: 13px;
+  margin: 5px 0;
+}
+.CountyRadio .button-Box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.CountyRadio .button-Box .button {
+  width: calc(33.33% - 4px);
+  height: 36px;
+  margin: 2px;
+}
+@media (max-width: 768px) {
+  .CountyRadio .button-Box .button {
+    height: 40px;
+  }
+}
+.CountyRadio .button-Box input[name="CountyRadio"] {
+  display: none;
+}
+.CountyRadio
+  .button-Box
+  input[name="CountyRadio"]:checked
+  + label[name="CountyRadio"] {
+  background-color: rgba(255, 165, 0, 0.7);
+}
+.CountyRadio .button-Box label[name="CountyRadio"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  font-weight: 900;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.CountyRadio .button-Box label[name="CountyRadio"]:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+ul.AQIBox {
+  max-width: 460px;
+}
+@media (max-width: 768px) {
+  ul.AQIBox {
+    max-width: 90%;
+    min-width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+ul.AQIBox > li.AQIcard {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
+ul.AQIBox > li.AQIcard:nth-child(1) {
+  margin-top: 0;
+}
+ul.AQIBox > li.AQIcard .County {
+  font-weight: bold;
+}
+ul.AQIBox > li.AQIcard .District .SiteName {
+  font-size: 2.125rem;
+  font-weight: bold;
+}
+ul.AQIBox > li.AQIcard .AQINum .AQI {
+  position: relative;
+  display: inline-block;
+  font-size: 3.25rem;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 8px 15px;
+  margin: 10px 0 20px 0;
+}
+ul.AQIBox > li.AQIcard .AQINum .AQI.Good {
+  color: #52b947;
+}
+ul.AQIBox > li.AQIcard .AQINum .AQI.Moderate {
+  color: #f3ec19;
+}
+ul.AQIBox > li.AQIcard .AQINum .AQI.UnhealthyForSensitiveGroups {
+  color: #f57e20;
+}
+ul.AQIBox > li.AQIcard .AQINum .AQI.Unhealthy {
+  color: #ed1d24;
+}
+ul.AQIBox > li.AQIcard .AQINum .AQI.VeryUnhealthy {
+  color: #7e2b7d;
+}
+ul.AQIBox > li.AQIcard .AQINum .AQI.Hazardous {
+  color: #480d27;
+}
+ul.AQIBox > li.AQIcard .AQINum .AQI:before {
+  position: absolute;
+  content: "";
+  border-top: 8px solid white;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  bottom: -17px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+}
+ul.AQIBox > li.AQIcard .AQINum .Status {
+  font-weight: bold;
+}
+ul.AQIBox > li.AQIcard .DataBox {
+  margin: 10px 0;
+  width: 100%;
+}
+ul.AQIBox > li.AQIcard .DataBox .Item {
+  display: flex;
+  align-items: center;
+  padding: 5px 5px 10px 5px;
+  border-radius: 5px;
+}
+ul.AQIBox > li.AQIcard .DataBox .Item:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+ul.AQIBox > li.AQIcard .DataBox .Item .DataName {
+  width: 80%;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+ul.AQIBox > li.AQIcard .DataBox .Item .NumericalValue {
+  width: 20%;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1rem;
+}
+ul.AQIBox > li.AQIcard .DataBox .Item .NumericalValue .unit {
+  display: block;
+  font-size: 12px;
+  margin-left: 10px;
+}
+ul.AQIBox > li.AQIcard .PublishTime {
+  text-align: right;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pageSelect ul.pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pageSelect ul.pages li.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  width: 30px;
+  height: 30px;
+  font-size: 13px;
+  font-weight: 900;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.pageSelect ul.pages li.page:hover {
+  background-color: rgba(245, 126, 32, 0.6);
+}
+.pageSelect ul.pages li.page:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.pageSelect ul.pages li.page:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.pageSelect ul.pages li.page.thisPage {
+  background-color: #f57e20;
+}
+
+.bar {
+  margin-top: 8px;
+  width: 98%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.bar .bar-value {
+  height: 100%;
+  width: 0;
+  background-color: #f57e20;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.footer {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.footer a {
+  color: white;
+}
+.footer .icon {
+  margin-right: 5px;
+}
